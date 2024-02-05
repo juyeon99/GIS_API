@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Index</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="./jqueryUI/jquery-ui.css">
+        <script src="./jqueryUI/jquery-ui.js"></script>
+</head>
+<body style="padding-left: 150px; padding-right: 150px; padding-top: 50px; padding-bottom: 50px;">
+  <h1>GIS API Documentation</h1><br>
+  <p style="font-size: 18px;">GIS API is an API that provides basic GIS (Geographic Information Systems) operations. <br><br>
+    The package implements functionality for managing and working with geographic information. The basic data we'll be manipulating is geographic points: 2D latitude and longitude values, as well as 3D latitude, longitude, elevation values.
+  </p><br>
+  
+  <hr>
+  <ul>
+    <li><a href="reference.html">Reference Page</a></li>
+    <li><a href="tutorial.html">Tutorial Page</a></li>
+  </ul>
+  
+  <hr><br>
+  <h3 id="class_geopoint">Class GeoPoint</h3><br>
+  <p style="font-size: 18px;">
+    The GeoPoint class contains the latitude and longitude of a geographic point in floating point value in a single object. Object can be manipulated as 3D point when elevation is specified in positive float value by user, and otherwise it is 2D point. <br><br>
+    The value of latitude is between -90 and 90 (inclusive), and longitude is -180 and 180 (inclusive). The default value of elevation is -1 which means that the object is 2D point, and the value of elevation can be non-negative float when manipulating the object as 3D point. The constructors which creates geographic points do not check the user from setting these fields as the value outside of the correct range. If the fields’ value is not in the proper range, some function calls might not be proceeded. 
+  </p>
+  <br><hr><br>
+
+  <h3>Fields</h3><br>
+  <div style="padding: 10px;">
+  <table style="width: 100%; border: 1px solid black;">
+    <tr style="background-color: rgb(204, 225, 231);">
+      <th style="padding: 5px; border: 1px solid black; font-weight: bold;">latitude</th>
+    </tr>
+    <tr>
+      <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">private float latitude</div>
+        <div style="padding: 5px;">The latitude of the geographic point. Value is between -90 and 90 inclusive.</div>
+        <div style="padding: 5px;"><strong>See Also:</strong></div>
+        <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getLatitude(), setLatitude(float)</div></td>
+    </tr>
+  </table><br>
+  <table style="width: 100%; border: 1px solid black;">
+    <tr style="background-color: rgb(204, 225, 231);">
+      <th style="padding: 5px; border: 1px solid black; font-weight: bold;">longitude</th>
+    </tr>
+    <tr>
+      <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">private float longitude</div>
+        <div style="padding: 5px;">The longitude of the geographic point. Value is between -180 and 180 inclusive.</div>
+        <div style="padding: 5px;"><strong>See Also:</strong></div>
+        <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getLongitude(), setLongitude(float)</div></td>
+    </tr>
+  </table><br>
+  <table style="width: 100%; border: 1px solid black;">
+    <tr style="background-color: rgb(204, 225, 231);">
+      <th style="padding: 5px; border: 1px solid black; font-weight: bold;">elevation</th>
+    </tr>
+    <tr>
+      <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">private float elevation</div>
+        <div style="padding: 5px;">The elevation of the 3D geographic point. Default value is set as -1, and if user sets the value, the value should be non-negative.</div>
+        <div style="padding: 5px;"><strong>See Also:</strong></div>
+        <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getElevation(), setElevation(float)</div></td>
+    </tr>
+  </table></div>
+  
+  
+  <br>
+  <hr><br>
+  <h3>Constructors</h3><br>
+  <div style="padding: 10px;">
+  <table style="width: 100%; border: 1px solid black;">
+    <tr style="background-color: rgb(204, 225, 231);">
+      <th style="padding: 5px; border: 1px solid black; font-weight: bold;">GeoPoint</th>
+    </tr>
+    <tr>
+      <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public GeoPoint()</div>
+        <div style="padding: 5px;">Creates an instance of 2D GeoPoint with latitude of 0 and longitude of 0.</div>
+    </tr>
+  </table><br>
+
+  <table style="width: 100%; border: 1px solid black;">
+    <tr style="background-color: rgb(204, 225, 231);">
+      <th style="padding: 5px; border: 1px solid black; font-weight: bold;">GeoPoint</th>
+    </tr>
+    <tr>
+      <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public GeoPoint(float latitude, float longitude)</div>
+        <div style="padding: 5px;">Creates an instance of 2D GeoPoint with specified latitude and specified longitude.</div>
+        <div style="padding: 5px;"><strong>Parameters:</strong></div>
+        <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	latitude - the specified latitude</div>
+        <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	longitude - the specified longitude</div>
+      </td>
+      </tr>
+  </table><br>
+
+  <table style="width: 100%; border: 1px solid black;">
+    <tr style="background-color: rgb(204, 225, 231);">
+      <th style="padding: 5px; border: 1px solid black; font-weight: bold;">GeoPoint</th>
+    </tr>
+    <tr>
+      <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public GeoPoint(float latitude, float longitude, float elevation)</div>
+        <div style="padding: 5px;">Creates an instance of 3D GeoPoint with specified latitude, specified longitude and specified elevation.</div>
+        <div style="padding: 5px;"><strong>Parameters:</strong></div>
+        <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	latitude - the specified latitude</div>
+        <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	longitude - the specified longitude</div>
+        <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	elevation - the specified elevation</div></td>
+      </tr>
+  </table></div>
+  <br>
+  <hr><br>
+  <h3>Methods</h3><br>
+  <div style="padding: 10px;">
+    <table id="getLatitude" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">getLatitude</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public float getLatitude()</div>
+          <div style="padding: 5px;">Returns the latitude of the GeoPoint object in floating point.</div>
+          <div style="padding: 5px;"><strong>Returns:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	the latitude of the GeoPoint object.</div>
+        </tr>
+    </table><br>
+
+    <table id="getLongitude" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">getLongitude</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public float getLongitude()</div>
+          <div style="padding: 5px;">Returns the longitude of the GeoPoint object in floating point.</div>
+          <div style="padding: 5px;"><strong>Returns:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	the longitude of the GeoPoint object.</div>
+        </tr>
+    </table><br>
+
+    <table id="getElevation" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">getElevation</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public float getElevation()</div>
+          <div style="padding: 5px;">Returns the elevation of the GeoPoint object in floating point.</div>
+          <div style="padding: 5px;"><strong>Returns:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	the elevation of the GeoPoint object.</div>
+        </tr>
+    </table><br>
+  
+    <table id="setLatitude" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">setLatitude</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public void setLatitude(float latitude)</div>
+          <div style="padding: 5px;">Sets the specific latitude of the GeoPoint object.</div>
+          <div style="padding: 5px;"><strong>Parameters:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	latitude - the new latitude for GeoPoint object</div>
+        </tr>
+    </table><br>
+
+    <table id="setLongitude" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">setLongitude</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public void setLongitude(float longitude)</div>
+          <div style="padding: 5px;">Sets the specific longitude of the GeoPoint object.</div>
+          <div style="padding: 5px;"><strong>Parameters:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	longitude - the new longitude for GeoPoint object</div>
+        </tr>
+    </table><br>
+
+    <table id="setElevation" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">setElevation</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public void setElevation(float elevation)</div>
+          <div style="padding: 5px;">Sets the specific elevation of the 3D GeoPoint object.</div>
+          <div style="padding: 5px;"><strong>Parameters:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	elevation - the new elevation for 3D GeoPoint object</div>
+        </tr>
+    </table><br>
+
+    <table id="distance" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">distance</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public float distance(GeoPoint g1, GeoPoint g2)</div>
+          <div style="padding: 5px;">Returns the distance of two geographic points in floating point.</div>
+          <div style="padding: 5px;"><strong>Parameters:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	g1 - the first GeoPoint object</div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	g2 - the second GeoPoint object</div>
+          <div style="padding: 5px;"><strong>Returns:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	the distance of g1 and g2.</div>
+          <div style="padding: 5px;"><strong>Exception:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	If the latitude is out of [-90,90] or longitude is out of [-180,180] for any of g1 or g2, it throws exception.</div>
+          <div style="padding: 5px;"><strong>Example:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<img src="img/dist.png"></div>
+        </tr>
+    </table><br>
+
+    <table id="farthestDist" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">farthestDist</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public void farthestDist(Vector&lt;GeoPoint&gt; v)</div>
+          <div style="padding: 5px;">Calculates and prints out the distance of the farthest two geographic points.</div>
+          <div style="padding: 5px;"><strong>Parameters:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	v - the vector of GeoPoint objects</div>
+          <div style="padding: 5px;"><strong>Exception:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	If the vector contains less than 2 objects, throws exception.</div>
+          <div style="padding: 5px;"><strong>Example:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<img src="img/farthest.png"></div>
+          <div style="padding: 5px;"><strong>See Also:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">Vector</a></div>
+        </tr>
+    </table><br>
+
+    <table id="in_polygon" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">in_polygon</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public bool in_polygon(GeoPoint g, Vector&lt;GeoPoint&gt; polygon)</div>
+          <div style="padding: 5px;">Returns true if g is in the polygon, and false otherwise.</div>
+          <div style="padding: 5px;"><strong>Parameters:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	g - the GeoPoint objects which you want to determine whether or not it is in the polygon</div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	polygon - the vector of GeoPoint objects that defines a region</div>
+          <div style="padding: 5px;"><strong>Returns:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	the boolean value indicating if g is in the polygon.</div>
+          <div style="padding: 5px;"><strong>Example:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<img src="img/in_polygon.png"></div>
+          <div style="padding: 5px;"><strong>See Also:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">Vector</a>, points_in_polygon</div>
+        </tr>
+    </table><br>
+
+    <table id="points_in_polygon" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">points_in_polygon</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public Vector&lt;GeoPoint&gt; points_in_polygon(Vector&lt;GeoPoint&gt; v, Vector&lt;GeoPoint&gt; polygon)</div>
+          <div style="padding: 5px;">Returns vector of GeoPoint objects that are inside the polygon.</div>
+          <div style="padding: 5px;"><strong>Parameters:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	v - the vector of GeoPoint objects which you want to determine whether or not they are in polygon</div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	polygon - the vector of GeoPoint objects that defines a region</div>
+          <div style="padding: 5px;"><strong>Returns:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	the vector of GeoPoint objects that are in the region.</div>
+          <div style="padding: 5px;"><strong>Example:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<img src="img/points_in_polygon.png"></div>
+          <div style="padding: 5px;"><strong>See Also:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">Vector</a>, in_polygon</div>
+        </tr>
+    </table><br>
+
+    <table id="points_from_track" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">points_from_track</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public Vector&lt;GeoPoint&gt; points_from_track(File track)</div>
+          <div style="padding: 5px;">Returns vector of GeoPoint objects visited by someone.</div>
+          <div style="padding: 5px;"><strong>Parameters:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	track - a file that contains the information about journey taken by someone</div>
+          <div style="padding: 5px;"><strong>Returns:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	the vector of GeoPoint objects that are visited by someone.</div>
+          <div style="padding: 5px;"><strong>Example:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<img src="img/points_from_track.png"></div>
+          <div style="padding: 5px;"><strong>See Also:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">Vector</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a></div>
+        </tr>
+    </table><br>
+
+    <table id="extract_GPX_file" style="width: 100%; border: 1px solid black;">
+      <tr style="background-color: rgb(204, 225, 231);">
+        <th style="padding: 5px; border: 1px solid black; font-weight: bold;">extract_GPX_file</th>
+      </tr>
+      <tr>
+        <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">public Vector&lt;GeoPoint&gt; extract_GPX_file(File gpx)</div>
+          <div style="padding: 5px;">Reads GPX file and extract the route and return the points on the route.</div>
+          <div style="padding: 5px;"><strong>Parameters:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	gpx - a XML file that contains the geographic data</div>
+          <div style="padding: 5px;"><strong>Returns:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	the vector of GeoPoint objects that are extracted from GPX file.</div>
+          <div style="padding: 5px;"><strong>Example:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<img src="img/extract_GPX_file.png"></div>
+          <div style="padding: 5px;"><strong>See Also:</strong></div>
+          <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">Vector</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a></div>
+        </tr>
+    </table><br>
+
+  </div>
+
+
+</body>
+</html>
+

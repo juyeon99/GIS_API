@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reference</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="./jqueryUI/jquery-ui.css">
+        <script src="./jqueryUI/jquery-ui.js"></script>
+</head>
+<body style="padding-left: 150px; padding-right: 150px; padding-top: 50px; padding-bottom: 50px;">
+    <h2>References</h2><br><hr><br>
+
+    <h4>Classes</h4><br>
+    <table style="width: 100%; border: 1px solid black;">
+        <tr>
+          <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#class_geopoint">GeoPoint</a></td>
+          <td style="padding: 5px">geographic point that contains latitude, longitude, and elevation</td>
+        </tr>
+    </table><br>
+
+      <hr><br>
+
+      <h4>Methods</h4><br>
+      <table style="width: 100%; border: 1px solid black;">
+        <tr>
+          <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#getLatitude">getLatitude</a></td>
+          <td style="padding: 5px">Returns latitude of the GeoPoint object</td>
+        </tr>
+        <tr style="border: 1px solid black;">
+            <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#getLongitude">getLongitude</a></td>
+            <td style="padding: 5px">Returns longitude of the GeoPoint object</td>
+          </tr>
+          <tr style="border: 1px solid black;">
+            <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#getElevation">getElevation</a></td>
+            <td style="padding: 5px">Returns elevation of the GeoPoint object</td>
+          </tr>
+          <tr style="border: 1px solid black;">
+            <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#setLatitude">setLatitude</a></td>
+            <td style="padding: 5px">Sets latitude of the GeoPoint object</td>
+          </tr>
+          <tr style="border: 1px solid black;">
+            <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#setLongitude">setLongitude</a></td>
+            <td style="padding: 5px">Sets longitude of the GeoPoint object</td>
+          </tr>
+          <tr style="border: 1px solid black;">
+            <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#setElevation">setElevation</a></td>
+            <td style="padding: 5px">Sets elevation of the 3D GeoPoint object</td>
+          </tr>
+          <tr style="border: 1px solid black;">
+            <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#distance">distance</a></td>
+            <td style="padding: 5px">Returns the distance between two geographic points</td>
+          </tr>
+          <tr style="border: 1px solid black;">
+            <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#farthestDist">farthestDist</a></td>
+            <td style="padding: 5px">Find the points with farthest distance</td>
+          </tr>
+          <tr style="border: 1px solid black;">
+            <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#in_polygon">in_polygon</a></td>
+            <td style="padding: 5px">Checks if the point is in the polygon (region)</td>
+          </tr>
+          <tr style="border: 1px solid black;">
+            <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#points_in_polygon">points_in_polygon</a></td>
+            <td style="padding: 5px">Get all the points that is in the polygon (region)</td>
+          </tr>
+          <tr style="border: 1px solid black;">
+            <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#points_from_track">points_from_track</a></td>
+            <td style="padding: 5px">Returns the points saved in the track</td>
+          </tr>
+          <tr style="border: 1px solid black;">
+            <td style="width: 200px; background-color: aliceblue; padding: 5px;"><a href="index.html#extract_GPX_file">extract_GPX_file</a></td>
+            <td style="padding: 5px">Extract the route from GPX file and get the points</td>
+          </tr>
+      </table><br>
+
+
+
+
+      <!-- <br><br>
+    <table style="width: 100%; border: 1px solid black;">
+        <tr>
+          <td style="padding: 5px; border: 1px solid black;"><div style="font-family: Menlo; font-size: larger;padding: 10px;">void Vector.push_back(GeoPoint g)</div>
+            <div style="padding: 5px;">Appends the specific element at the back of the vector array.</div>
+            <div style="padding: 5px;"><strong>Parameters:</strong></div>
+            <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	g - the GeoPoint object to be added in the vector</div>
+            <div style="padding: 5px;"><strong>Example:</strong></div>
+            <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<img src="img/pushback.png"></div>
+            <div style="padding: 5px;"><strong>See Also:</strong></div>
+            <div style="padding: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">Vector</a></div>
+          </tr>
+      </table><br> -->
+</body>
+</html>
